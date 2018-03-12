@@ -35,6 +35,12 @@ dependencies {
 	compile('org.springframework.session:spring-session-core')
 	compile('org.seasar.doma.boot:doma-spring-boot-starter:1.0.2')
 	compile('mysql:mysql-connector-java:5.1.45')
+	//  H2
+	compile('org.springframework.boot:spring-boot-starter-data-jpa:1.3.3.RELEASE');
+	compile('com.h2database:h2:1.4.191');
+	// webjars
+	compile('org.webjars:jquery:3.3.1')
+	compile('org.webjars:bootstrap:4.1.3')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('mysql:mysql-connector-java')
 	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
