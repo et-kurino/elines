@@ -18,6 +18,8 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 9
+processResources.destinationDir = compileJava.destinationDir
+compileJava.dependsOn processResources
 
 repositories {
 	mavenCentral()
@@ -31,10 +33,16 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.retry:spring-retry')
 	compile('org.springframework.session:spring-session-core')
+	compile('org.seasar.doma.boot:doma-spring-boot-starter:1.0.2')
+	compile('mysql:mysql-connector-java:5.1.45')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('mysql:mysql-connector-java')
 	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.security:spring-security-test')
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
 }
