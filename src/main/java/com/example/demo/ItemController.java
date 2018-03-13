@@ -1,7 +1,21 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
 @Controller
 public class ItemController {
-
-	@GetMapping("/item/")
+	
+	
+	@RequestMapping("/item/{userId}")
+	public ModelAndView test(@PathVariable("itemId") String itemId, ModelAndView mav) {
+		mav.addObject("target", "America");
+		mav.setViewName("hello");
+		return mav;
+	}
+	
+	
+	
 }
