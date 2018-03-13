@@ -41,6 +41,9 @@ dependencies {
 	// webjars
 	compile('org.webjars:jquery:3.3.1')
 	compile('org.webjars:bootstrap:4.1.3')
+	// thymeLeaf
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('mysql:mysql-connector-java')
 	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
@@ -48,6 +51,11 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.security:spring-security-test')
 }
+	//thymeLeaf
+	ext['thymeleaf.version'] = '3.0.3.RELEASE'
+	ext['thymeleaf-layout-dialect.version'] = '2.1.2'
+	ext['thymeleaf-extras-java8time.version'] = '3.0.0.RELEASE'
+	ext['thymeleaf-extras-data-attribute.version'] = '2.0.1'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.6'
