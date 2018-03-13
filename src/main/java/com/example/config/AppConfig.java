@@ -4,11 +4,13 @@ package com.example.config;
 
 import javax.sql.DataSource;
 
-import org.seasar.doma.jdbc.dialect.Dialect;
 import org.seasar.doma.jdbc.Config;
 import org.seasar.doma.jdbc.SqlFileRepository;
+import org.seasar.doma.jdbc.dialect.Dialect;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy;
 
+@Configuration
 public class AppConfig implements Config {
 
     private DataSource dataSource;

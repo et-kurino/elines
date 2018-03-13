@@ -1,6 +1,6 @@
 package com.example.entry;
 
-@Controller
+/*@Controller
 public class UserEntryController {
 	
 	@RequestMapping("/test")
@@ -11,4 +11,4 @@ public class UserEntryController {
 	}
 	
 
-}
+}*/
