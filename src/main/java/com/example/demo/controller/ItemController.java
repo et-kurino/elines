@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,15 +25,15 @@ public class ItemController {
 	/*
 	 * 1.->mainアクセス（一覧表示　＋　ユーザ検索フォーム）
 	 * 2.->detailアクセス（一覧内の商品画像（path格納）　detailリンクから）
-	 * 3.->
+	 * 2-2.->searchアクセス(ユーザ検索フォームから)
 	 * */
 	
 	//main 商品全件渡す
 	@GetMapping("/item/search-list")
 	public String main(Model model) {
 		model.addAttribute("item", new Item());
-		List<Item> items = item.Repository.
-		
+		List<Item> items = itemRepository.selectAll();
+		model.addAttribute("items", items);
 		return "item/search-list";
 	}
 	
