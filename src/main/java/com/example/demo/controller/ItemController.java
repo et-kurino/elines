@@ -20,29 +20,39 @@ public class ItemController {
 	@Autowired
 	ItemRepository itemRepository;
 	
-	//商品全件渡す
+	/*
+	 * 1.->mainアクセス（一覧表示　＋　ユーザ検索フォーム）
+	 * 2.->detailアクセス（一覧内の商品画像（path格納）　detailリンクから）
+	 * 3.->
+	 * */
+	
+	//main 商品全件渡す
 	@GetMapping("/item/search-list")
 	public String main(Model model) {
 		model.addAttribute("item", new Item());
+		List<Item> items = item.Repository.
+		
 		return "item/search-list";
 	}
 	
 	
-	//商品検索結果渡す
+	//search 商品検索結果渡す
 	@PostMapping("/item/search-list")
 	public String search(@ModelAttribute Item item) {
+		
+		
 		return "item/search-list"
 		;}
 	
 	
-	//detail
+	//detail 詳細遷移
 	@RequestMapping(value="/item/{itemId}", method = RequestMethod.GET)
 	public ModelAndView detail(@PathVariable("itemId") String itemId, ModelAndView mav) {
 		
 		//serch-resultの商品idで検索
-		Item item = itemRepository.findOne(itemId);
+		Item itemData = itemRepository.findOne(itemId);
 		//clickされたitemIdで個別itemに飛ぶ
-		mav.addObject("target", "America");
+		mav.addObject("itemData", itemData);
 		mav.setViewName("item");
 		return mav;
 	}

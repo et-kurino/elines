@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	//検索フォーム
 	<div class="row">
 		<div class="col-md-6">
 			<form action="/item/search-list" th:action="@{/item/search-list}"
@@ -19,7 +20,7 @@
 		</div>
 	</div>
 
-	<a class="btn btn-warning" href="/item/000000"
-		th:href="@{/item/{id}(id=${item.itemId})}"></a>
+	<a class="btn btn-warning" href="item/item/1"
+		th:href="@{item/item/{id}(id=${item.itemId})}"></a>
 </body>
 </html>
