@@ -1,4 +1,4 @@
-package com.example.sign;
+package com.example.signup;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

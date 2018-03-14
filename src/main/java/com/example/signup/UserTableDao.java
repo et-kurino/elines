@@ -1,4 +1,4 @@
-package com.example.sign;
+package com.example.signup;
 
 import org.seasar.doma.Dao;
 import org.seasar.doma.Insert;
